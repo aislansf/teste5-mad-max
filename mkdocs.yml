@@ -1,0 +1,112 @@
+site_name: Fomento Educação Profissional
+site_url: https://gitlabbuilder.mec.gov.br/franciscofreitas/fomento-educacao-profissional/
+repo_url: https://gitlabbuilder.mec.gov.br/franciscofreitas/fomento-educacao-profissional/
+repo_name: franciscofreitas/fomento-educacao-profissional
+site_description: O projeto denominado de Fomento Educação Profissional analytics busca realizar uma análise exploratória dos dados e identificar padrões no cenário dos cursos técnicos em todo território nacional apresentando essas informações em um painel inteligente.
+
+nav:
+  - Descrição do projeto: index.md
+  - Metodologia: metodologia.md
+  - Fonte dos dados: fonte-dados.md
+  - Entendimento de negócio: entendimento-negocio.md
+  - Entendimento dos dados: entendimento-dados.md
+  - Análise exploratória: analise-exploratoria.md
+  - Preparação dos dados: preparacao.md
+  - Modelagem dos dados: modelagem.md
+  - Avaliação dos resultados: avaliacao.md
+  - Implementação: implementacao.md
+  - Status do projeto: status.md
+
+
+plugins:
+  - mkdocs-jupyter
+  - search
+  - mkdocs-video
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+  - awesome-pages
+  - print-site:
+        add_to_navigation: false
+        add_full_urls: false
+        add_table_of_contents: true
+        toc_title: "Table of Contents"
+        toc_depth: 2
+        add_full_urls: false
+        enumerate_headings: true
+        enumerate_figures: true
+        add_cover_page: true
+        path_to_pdf: "docs/site.pdf"
+
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  icon: 
+    repo: fontawesome/brands/github
+    logo: fontawesome/solid/house
+      
+  palette:
+    - scheme: default
+      primary: light blue
+      accent: light blue
+      toggle:
+        icon: fontawesome/solid/toggle-on
+        name: Switch to dark mode
+    - scheme: slate
+      primary: light blue
+      accent: light blue
+      toggle:
+        icon: fontawesome/solid/toggle-off
+        name: Switch to light mode
+  #features:
+    #- navigation.tabs
+    #- navigation.top
+    #- navegation.expand
+    #- navigation.tabs.sticky
+    #- navigation.tracking
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true   
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.keys
+
+  
+
+
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.number.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/sorts/tablesort.date.min.js
+  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+
+extra_css:
+  - assets/css/tables.css
